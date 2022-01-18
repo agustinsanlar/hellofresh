@@ -26,7 +26,7 @@ Using the template data object in the data.js file as a data source: <br>
 ## Second Part
 Create a main.html page with 3 recipe cards. This page will have a desktop view and a mobile view. 
 
-### Section 1
+### Section 4
 Each recipe card should have:
 * Recipe image
 * Recipe name 
@@ -50,6 +50,9 @@ Here are some sample images you can use.
 https://img.hellofresh.com/q_auto,f_auto,w_640/recipes/image/6034350e7e984f70cd182199-af5cb8d9.jpg
 https://img.hellofresh.com/q_auto,f_auto,w_640/recipes/image/bengal-beef-strip-curry-with-rice-f6ec00c0.jpg
 https://img.hellofresh.com/q_auto,f_auto,w_640/recipes/image/easter-rosemary-garlic-lamb-e18433cf.jpg
+
+## Submission
+Please clone this repo and create a new repo in your git account. When you are done please send us the link to your repo.
 
 ## Some final notes
 
