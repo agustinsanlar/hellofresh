@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>HelloFresh CRM Digital Dev Challenge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- 
+
+        ## Second Part
+        Create a main.html page with 3 recipe cards. This page will have a desktop view and a mobile view. 
+
+        ### Section 4
+        Each recipe card should have:
+        * Recipe image [X]
+        * Recipe name [X] 
+        * Recipe headline [X]
+        * Button reading “Cook Now” [-]
+        * Do not worry about adding the minutes, category section, or icons. [X]
+
+        Details of functionality:
+        * The whole recipe card should link to a HelloFresh home page. (Hellofresh.de) 
+
+        In the desktop view all 3 recipe cards will be vertically aligned and have a max width of 900px.
+        Example:
+        ![alt text](https://cdn.hellofresh.com/de/cms/crm/Sample-for-crm-dev-challange.png)
+
+
+        In the mobile view all 3 recipe cards will be horizontally aligned and have a max width of 430px.
+
+        **Note: The mentioned functionality and design must be completed without the use of Flexbox or CSS Grid. However, Tailwind is allowed but optional.**
+
+        COMMENTS:
+        - Using an <a> tag for the full card disallows to have a inner <button> later. Added both version, however, <span> is preferred as the full item is clickable and not just the CTA
+        - Where it says "In the desktop view all 3 recipe cards will be vertically aligned and have a max width of 900px." I assumed horizontally. And the vertically stacked on mobile.
+    
+    -->
+
+    <!-- Container with max width of 900px -->
+    <div class="container mx-auto max-w-[900px]">
+
+        <!-- 3 columns on medium screen, just one for mobile -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+            <!-- Full card as <a> tag -->
+            <a href="https://hellofresh.de">
+
+                <!-- Max 430px for the full card (only used on mobile as 900px / 3 columns is less than 430px), align to center -->
+                <div class="w-full shadow-md hover:shadow-xl shadow-gray-300 rounded bg-white my-3 max-w-[430px] mx-auto">
+                    <figure>
+                        <!-- Image only rounded on top -->
+                        <img class="rounded-t" src="https://img.hellofresh.com/q_auto,f_auto,w_640/recipes/image/6034350e7e984f70cd182199-af5cb8d9.jpg" alt="Recipe 1">
+                    </figure>
+
+                    <!-- Small text based on TailwindCSS preflight styles -->
+                    <div class="p-2 text-xs">
+
+                        <!-- H2 could be replaced to lower based on the context of the full page -->
+                        <h2 class="font-bold">Pork salmon steak with bean vegetables</h2>
+                        <p class="text-xs">served with homemade thyme and herb butter</p>
+
+                        <!-- Using table to avoid rare float issues, forced height for the division line -->
+                        <table class="h-7 mt-3 mb-4">
+                            <tr>
+                                <!-- Line to 1px -->
+                                <td class="border-r-[1px]">
+                                    <div class="font-bold pr-1">35 min</div>
+                                </td>
+
+                                <td class="pl-1">
+                                    <!-- Repeating tags, each one may have a color -->
+                                    <span class="text-amber-900 ml-1">
+
+                                        <!-- Using FontAwesome for simplicity -->
+                                        <i class="fa-brands fa-pagelines"></i>
+                                    </span>
+
+                                    <span class="text-gray-500 ml-1">
+                                        &bull;
+                                        <span class="ml-1">Family</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Using <span> to keep HTML validation correct, other opction with <button>
+
+                            <button class="w-full text-base shadow-lg hover:shadow-xl text-md bg-green-800 hover:bg-green-700 text-white py-1 px-4 rounded">
+                                <i class="fa-solid fa-utensils mr-1"></i> Cook now
+                            </button>
+
+                        -->
+                        <span class="block text-center w-full text-base shadow-lg hover:shadow-xl text-md bg-green-800 hover:bg-green-700 text-white py-1 px-4 rounded">
+                            <i class="fa-solid fa-utensils mr-1"></i> Cook now
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+
+            <!-- Non-commented block for better reading -->
+            <a href="https://hellofresh.de">
+                <div class="w-full shadow-md hover:shadow-xl shadow-gray-300 rounded bg-white my-3 max-w-[430px] mx-auto">
+                    <figure>
+                        <img class="rounded-t" src="https://img.hellofresh.com/q_auto,f_auto,w_640/recipes/image/bengal-beef-strip-curry-with-rice-f6ec00c0.jpg" alt="Recipe 2">
+                    </figure>
+                    <div class="description p-2 text-xs">
+
+                        <h2 class="font-bold">Salmon fillet with a lemon crust</h2>
+                        <p class="text-xs">with cucumber salad in fresh dill yoghurt dressing</p>
+
+                        <table class="h-7 mt-3 mb-4">
+                            <tr>
+                                <td class="border-r-[1px]">
+                                    <div class="font-bold pr-1">30 min</div>
+                                </td>
+
+                                <td class="pl-1">
+                                    <span class="text-amber-900 ml-1">
+                                        <i class="fa-brands fa-pagelines"></i>
+                                    </span>
+
+                                    <span class="text-gray-500 ml-1">
+                                        &bull;
+                                        <span class="ml-1">High Protein</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <span
+                            class="block text-center w-full text-base shadow-lg hover:shadow-xl text-md bg-green-800 hover:bg-green-700 text-white py-1 px-4 rounded">
+                            <i class="fa-solid fa-utensils mr-1"></i> Cook now
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://hellofresh.de">
+                <div class="w-full shadow-md hover:shadow-xl shadow-gray-300 rounded bg-white my-3 max-w-[430px] mx-auto">
+                    <figure>
+                        <img class="rounded-t" src="https://img.hellofresh.com/q_auto,f_auto,w_640/recipes/image/easter-rosemary-garlic-lamb-e18433cf.jpg" alt="Recipe 3">
+                    </figure>
+                    <div class="description p-2 text-xs">
+
+                        <h2 class="font-bold">Chicken leg with celeriac mash</h2>
+                        <p class="text-xs">colorful over carrots and balsamic sauce</p>
+
+                        <table class="h-7 mt-3 mb-4">
+                            <tr>
+                                <td class="border-r-[1px]">
+                                    <div class="font-bold pr-1">45 min</div>
+                                </td>
+
+                                <td class="pl-1">
+                                    <span class="text-gray-500">
+                                        <span class="ml-1">High Protein</span>
+                                    </span>
+
+                                    <span class="text-gray-500 ml-1">
+                                        &bull;
+                                        <span class="ml-1">Family</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <span
+                            class="block text-center w-full text-base shadow-lg hover:shadow-xl text-md bg-green-800 hover:bg-green-700 text-white py-1 px-4 rounded">
+                            <i class="fa-solid fa-utensils mr-1"></i> Cook now
+                        </span>
+                    </div>
+                </div>
+            </a>
+            <!-- END: Last recipe card -->
+
+        </div>
+        <!-- END: Columns -->
+
+    </div>
+    <!-- END: Container -->
+
+</body>
+
+</html>
